@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple Banner Ad</title>
+  <title>Simple Responsive Banner Ad</title>
   <style>
     body {
       display: flex;
@@ -12,25 +13,29 @@
       height: 100vh;
       background: #f4f4f4;
       margin: 0;
+      font-family: 'Poppins', sans-serif;
     }
 
     .banner {
-      width: 728px;
-      height: 90px;
+      width: 90%;
+      max-width: 728px;
+      min-height: 90px;
       background: linear-gradient(90deg, #007bff, #00c6ff);
       color: white;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 30px;
+      padding: 15px 25px;
       border-radius: 8px;
-      font-family: 'Poppins', sans-serif;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      box-sizing: border-box;
+      gap: 15px;
     }
 
     .banner h2 {
       margin: 0;
       font-size: 1.5rem;
+      flex: 1;
     }
 
     .banner button {
@@ -42,11 +47,29 @@
       font-weight: bold;
       cursor: pointer;
       transition: 0.3s;
+      flex-shrink: 0;
     }
 
     .banner button:hover {
       background: #007bff;
       color: white;
+    }
+
+    /* 🔹 Responsive Design */
+    @media (max-width: 600px) {
+      .banner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .banner h2 {
+        font-size: 1.2rem;
+      }
+
+      .banner button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
